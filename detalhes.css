@@ -1,0 +1,123 @@
+/* Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f4f4f4;
+    color: #1b2a49;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo img {
+    width: 500px;
+    height: auto;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #1b2a49;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+    color: #ff6f61;
+    font-weight: bolder;
+}
+
+/* Detalhes (JSON) */
+.detalhes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); 
+    background-color: #ffffff;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.card-detalhes {
+    width: 80%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    text-align: center;
+}
+
+.card-detalhes img {
+    width: 100%;
+    max-height: 700px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card-detalhes h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ff6f61;
+}
+
+.card-detalhes p {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.card-detalhes .info-extra {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Botão Voltar fixado */
+.voltar-link {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 2rem;
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+.voltar-link:hover {
+    background-color: #35cdc1;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 2rem;
+}

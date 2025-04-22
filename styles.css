@@ -1,0 +1,223 @@
+/* Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f4f4f4;
+    color: #1b2a49;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo img {
+    width: 500px;
+    height: auto;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #1b2a49;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+    color: #ff6f61;
+    font-weight: bolder;
+}
+
+/* Descrição Wonderguide */
+.intro {
+    background-color: #ffffff;
+    padding: 1px 60px 70px 60px
+}
+
+.intro h1 {
+    font-size: 7.4rem;
+    margin-bottom: 1px;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 2.3rem;
+    color: #35cdc1;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.intro p {
+    font-size: 2.6rem;
+    color: #1b2a49;
+    max-width: 63vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Lugares */
+#lugares {
+    padding: 40px;
+}
+
+#lugares h2 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.lugares-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.lugar {
+    width: 24%;
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lugar img {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.lugar h3 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.lugar p {
+    font-size: 2rem;
+    color: #1b2a49;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.lugar a {
+    text-decoration: none;
+    color: #ff6f61;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.lugar a:hover {
+    text-decoration: underline;
+}
+
+/* Info. do Aluno */
+#info-aluno {
+    font-size: 70px;
+    padding-left: 170px;
+}
+
+hr {
+    border: none;
+    border-top: 4px solid #1b2a49;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.aluno-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4rem;
+    gap: 80px;
+}
+
+.aluno-container h1 {
+    font-size: 55px;
+}
+
+.aluno-container p {
+    font-size: 41px;
+    text-align: justify;
+    max-width: 100%;
+}
+
+.aluno-sobre {
+    width: 40%;
+}
+
+.aluno-outros{
+    width: 41%;
+}
+
+.autoria-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.autoria-container h1 {
+    width: 100%;
+    position: relative;
+    left: 9%;
+}
+
+.imagem-autoria {
+    height: auto;
+    width: 400px;
+    border: #1b2a49 solid 3px;
+    border-radius: 500px;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+
+#texto-autoria {
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.redes-sociais {
+    display: flex;
+    padding-top: 24px;
+}
+
+.icone-insta {
+    font-size: 60px;
+    padding-left: 24px;
+    color: #1b2a49;
+}
+
+.icone-insta:hover {
+    color: #ff6f61;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 2rem;
+}

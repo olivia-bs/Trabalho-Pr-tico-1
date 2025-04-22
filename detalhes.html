@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Destino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="detalhes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">
+            <img src="./img/LOGO TEXTO.png" alt="Logotipo">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="index.html#lugares">Destinos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Detalhes -->
+    <main>
+        <div class="detalhes-container">
+            <div id="detalhes" class="card-detalhes"></div>
+            <a href="index.html" class="voltar-link">← Voltar à página inicial</a>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2025 Wonderguide - Todos os direitos reservados.</p>
+    </footer>
+    <script src="app.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get("id"));
+
+        const destino = destinos.find(dest => dest.id === id);
+
+        if (destino) {
+            document.getElementById("detalhes").innerHTML = `
+        <img src="${destino.imagem}" alt="${destino.nome}">
+        <h2>${destino.nome}</h2>
+        <p>${destino.descricao}</p>
+        <div class="info-extra">
+          <p><strong>Localização:</strong> ${destino.localizacao}</p>
+          <p><strong>Continente:</strong> ${destino.continente}</p>
+          <p><strong>Tipo:</strong> ${destino.tipo}</p>
+        </div>
+      `;
+        } else {
+            document.getElementById("detalhes").innerHTML = "<p>Destino não encontrado.</p>";
+        }
+
+    </script>
+</body>
+
+</html>
