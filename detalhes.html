@@ -18,7 +18,7 @@
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="index.html#lugares">Destinos</a></li>
+                <li><a href="index.html#todos-locais">Destinos</a></li>
             </ul>
         </nav>
     </header>
@@ -26,12 +26,9 @@
     <!-- Detalhes -->
     <main>
         <div class="detalhes-container">
-            <!-- INFORMAÇÕES GERAIS -->
             <h3>Informações Gerais</h3>
             <hr>
             <div id="detalhes" class="card-detalhes"></div>
-
-            <!-- FOTOS DO DESTINO -->
             <div id="fotos-destino" class="fotos-destino">
                 <h3>Fotos do Destino</h3>
                 <hr>
@@ -44,7 +41,7 @@
     <footer class="footer">
         <p>&copy; 2025 Wonderguide - Todos os direitos reservados.</p>
     </footer>
-    
+
     <script src="app.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
@@ -53,7 +50,7 @@
         const destino = destinos.find(dest => dest.id === id);
 
         if (destino) {
-            // Exibir as informações gerais
+            // Exibir informações gerais
             document.getElementById("detalhes").innerHTML = `
                 <img src="${destino.imagem}" alt="${destino.nome}">
                 <h2>${destino.nome}</h2>
@@ -65,10 +62,9 @@
                 </div>
             `;
 
-            // Adicionar fotos adicionais
+            // Fotos adicionais
             const fotosContainer = document.getElementById("fotos-container");
 
-            // Exibir as fotos adicionais se existirem
             if (destino.fotosAdicionais && destino.fotosAdicionais.length > 0) {
                 destino.fotosAdicionais.forEach(foto => {
                     const fotoElemento = document.createElement("div");

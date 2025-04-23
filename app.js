@@ -104,7 +104,7 @@ const destinos = [
     {
         id: 7,
         nome: "Monte Everest",
-        descricaoResumida: "O ponto mais alto do planeta, símbolo de desafio e superação.",
+        descricaoResumida: "O ponto mais alto do planeta, símbolo de desafio e superação para todos que se desafiam a chegar ao topo.",
         descricao: "O ponto mais alto do planeta, o Monte Everest é um símbolo de desafio e superação. Situado na Cordilheira do Himalaia, atrai montanhistas e aventureiros do mundo todo, oferecendo vistas deslumbrantes e uma experiência única.",
         imagem: "img/Everest.jpg",
         fotosAdicionais: [
@@ -138,7 +138,7 @@ const destinos = [
     {
         id: 9,
         nome: "Praia de Cancun",
-        descricaoResumida: "Famosa por suas águas azul-turquesa e vida noturna vibrante.",
+        descricaoResumida: "Uma das mais belas praias do planeta, famosa por suas águas azul-turquesa e vida noturna vibrante.",
         descricao: "Localizada no Caribe mexicano, Cancun é famosa por suas águas azul-turquesa, areias brancas e vida noturna vibrante. É um destino ideal para quem busca relaxamento à beira-mar e atividades aquáticas como mergulho e snorkeling.",
         imagem: "img/Praiadecancun.jpg",
         fotosAdicionais: [
@@ -205,13 +205,9 @@ const destinos = [
     }
 ];
 
-// Função para exibir os destinos
-function exibirCards() {
-    const containerRecomendados = document.getElementById("recomendados-carrossel");
+// Exibição de todos os destinos
+function exibirTodosOsDestinos() {
     const containerTodos = document.getElementById("todos-container");
-
-    // Limpar os containers antes de adicionar novos itens
-    containerRecomendados.innerHTML = '';
     containerTodos.innerHTML = '';
 
     destinos.forEach(destino => {
@@ -223,30 +219,20 @@ function exibirCards() {
             <p>${destino.descricaoResumida}</p>
             <a href="detalhes.html?id=${destino.id}">Saiba Mais</a>
         `;
-
-        // Se o destino for recomendado, adiciona na seção recomendados (carrossel)
-        if (destino.recomendado) {
-            containerRecomendados.appendChild(card);
-        }
-
-        // Adiciona todos os destinos (independente de serem recomendados ou não)
         containerTodos.appendChild(card);
     });
 }
 
-// Função de carrossel para destinos recomendados
+// Carrossel de recomendados
 const recomendados = destinos.filter(destino => destino.recomendado);
 let indiceAtual = 0;
 
-// Função para renderizar o carrossel
 function renderizarCarrossel(indice) {
     const carrossel = document.getElementById("recomendados-carrossel");
-    carrossel.innerHTML = "";  // Limpa o conteúdo do carrossel
+    carrossel.innerHTML = "";
 
-    // Se houver destinos recomendados, renderiza o destino no índice atual
     if (recomendados.length > 0) {
         const destino = recomendados[indice];
-
         const card = document.createElement("div");
         card.classList.add("lugar-carrossel");
         card.innerHTML = `
@@ -255,23 +241,19 @@ function renderizarCarrossel(indice) {
             <p>${destino.descricaoResumida}</p>
             <a href="detalhes.html?id=${destino.id}">Saiba mais</a>
         `;
-
-        carrossel.appendChild(card); // Adiciona o destino ao carrossel
+        carrossel.appendChild(card);
     } else {
-        carrossel.innerHTML = "<p>Não há destinos recomendados.</p>"; // Caso não haja destinos recomendados
+        carrossel.innerHTML = "<p>Não há destinos recomendados.</p>";
     }
 }
 
-// Exibe o carrossel com o primeiro destino recomendado assim que a página carregar
+// Inicialização
 document.addEventListener("DOMContentLoaded", () => {
-    // Exibe o primeiro destino recomendado no carrossel
-    renderizarCarrossel(indiceAtual);
-
-    // Exibe todos os destinos
-    exibirCards();
+    renderizarCarrossel(indiceAtual);  // carrega um destino no carrossel imediatamente
+    exibirTodosOsDestinos();           // carrega todos os destinos abaixo
 });
 
-// Eventos para navegação no carrossel
+// Navegação do carrossel
 document.getElementById("btn-anterior").addEventListener("click", () => {
     indiceAtual = (indiceAtual - 1 + recomendados.length) % recomendados.length;
     renderizarCarrossel(indiceAtual);
