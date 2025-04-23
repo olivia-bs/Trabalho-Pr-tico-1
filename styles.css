@@ -48,7 +48,7 @@ body {
 /* Descrição Wonderguide */
 .intro {
     background-color: #ffffff;
-    padding: 1px 60px 70px 60px
+    padding: 1px 60px 70px 60px;
 }
 
 .intro h1 {
@@ -72,36 +72,67 @@ body {
     text-align: center;
 }
 
-/* Lugares */
-#lugares {
-    padding: 40px;
+/* Lugares Recomendados */
+#lugares-recomendados {
+    padding: 20px 40px;
+    background-color: #f4f4f4;
 }
 
-#lugares h2 {
+#lugares-recomendados h2 {
     font-size: 5rem;
     margin-bottom: 20px;
     text-align: center;
+    padding: 20px;
 }
 
+#separar {
+    border: none;
+    border-top: 5px solid #1b2a49;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Todos os Locais */
+#todos-locais {
+    padding: 10px 40px;
+    background-color: #f4f4f4;
+}
+
+#todos-locais h2 {
+    font-size: 5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Ajuste na estrutura dos lugares */
 .lugares-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+    margin: 20px 0;
 }
 
+/* Corrigir largura mínima e padding nos cards */
 .lugar {
-    width: 24%;
+    width: 23%;
+    min-width: 250px;
     background-color: #fff;
     padding: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.lugar:hover {
+    transform: scale(1.05);
 }
 
 .lugar img {
     width: 100%;
-    height: 400px;
+    height: 450px;
     border-radius: 8px;
     margin-bottom: 15px;
     object-fit: cover;
@@ -113,7 +144,7 @@ body {
 }
 
 .lugar p {
-    font-size: 2rem;
+    font-size: 2.1rem;
     color: #1b2a49;
     text-align: center;
     padding-bottom: 10px;
@@ -134,6 +165,7 @@ body {
 #info-aluno {
     font-size: 70px;
     padding-left: 170px;
+    padding-top: 70px;
 }
 
 hr {
@@ -167,7 +199,7 @@ hr {
     width: 40%;
 }
 
-.aluno-outros{
+.aluno-outros {
     width: 41%;
 }
 
@@ -220,4 +252,80 @@ hr {
     padding: 10px;
     text-align: center;
     font-size: 2rem;
+}
+
+/* Carrossel */
+#lugares-recomendados {
+    padding: 20px 40px;
+    background-color: #f4f4f4;
+}
+
+.carrossel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+.carrossel-btn {
+    background-color: #ff6f61;
+    border: none;
+    color: white;
+    font-size: 5rem;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    z-index: 2;
+}
+
+.carrossel-btn:hover {
+    background-color: #e65a50;
+}
+
+.carrossel-container {
+    width: 45%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lugar-carrossel {
+    flex: 0 0 100%;
+    text-align: center;
+    background-color: #fff;
+    padding: 3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lugar-carrossel img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.lugar-carrossel h3 {
+    font-size: 3.4rem;
+    margin-bottom: 10px;
+}
+
+.lugar-carrossel p {
+    font-size: 2.2rem;
+    padding-bottom: 10px;
+}
+
+.lugar-carrossel a {
+    font-size: 2rem;
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lugar-carrossel a:hover {
+    text-decoration: underline;
 }

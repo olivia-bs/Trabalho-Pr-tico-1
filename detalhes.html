@@ -22,11 +22,21 @@
             </ul>
         </nav>
     </header>
+
     <!-- Detalhes -->
     <main>
         <div class="detalhes-container">
+            <!-- INFORMAÇÕES GERAIS -->
+            <h3>Informações Gerais</h3>
+            <hr>
             <div id="detalhes" class="card-detalhes"></div>
-            <a href="index.html" class="voltar-link">← Voltar à página inicial</a>
+
+            <!-- FOTOS DO DESTINO -->
+            <div id="fotos-destino" class="fotos-destino">
+                <h3>Fotos do Destino</h3>
+                <hr>
+                <div id="fotos-container" class="fotos-container"></div>
+            </div>
         </div>
     </main>
 
@@ -34,6 +44,7 @@
     <footer class="footer">
         <p>&copy; 2025 Wonderguide - Todos os direitos reservados.</p>
     </footer>
+    
     <script src="app.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
@@ -42,20 +53,36 @@
         const destino = destinos.find(dest => dest.id === id);
 
         if (destino) {
+            // Exibir as informações gerais
             document.getElementById("detalhes").innerHTML = `
-        <img src="${destino.imagem}" alt="${destino.nome}">
-        <h2>${destino.nome}</h2>
-        <p>${destino.descricao}</p>
-        <div class="info-extra">
-          <p><strong>Localização:</strong> ${destino.localizacao}</p>
-          <p><strong>Continente:</strong> ${destino.continente}</p>
-          <p><strong>Tipo:</strong> ${destino.tipo}</p>
-        </div>
-      `;
+                <img src="${destino.imagem}" alt="${destino.nome}">
+                <h2>${destino.nome}</h2>
+                <p>${destino.descricao}</p>
+                <div class="info-extra">
+                    <p><strong>Localização:</strong> ${destino.localizacao}</p>
+                    <p><strong>Tipo:</strong> ${destino.tipo}</p>
+                    <p><strong>Avaliação Média:</strong> ${destino.avaliacaoMedia}</p>
+                </div>
+            `;
+
+            // Adicionar fotos adicionais
+            const fotosContainer = document.getElementById("fotos-container");
+
+            // Exibir as fotos adicionais se existirem
+            if (destino.fotosAdicionais && destino.fotosAdicionais.length > 0) {
+                destino.fotosAdicionais.forEach(foto => {
+                    const fotoElemento = document.createElement("div");
+                    fotoElemento.className = "foto-destino";
+                    fotoElemento.innerHTML = `<img src="${foto}" alt="Foto do ${destino.nome}">`;
+                    fotosContainer.appendChild(fotoElemento);
+                });
+            } else {
+                fotosContainer.innerHTML = "<p>Não há fotos adicionais disponíveis.</p>";
+            }
+
         } else {
             document.getElementById("detalhes").innerHTML = "<p>Destino não encontrado.</p>";
         }
-
     </script>
 </body>
 
